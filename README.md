@@ -8,6 +8,7 @@ To find the probability of that  (i) exactly 4 customers arrive (ii) more than 4
 
 Python
 
+
 # Theory:
 
 The Poisson process is one of the most widely-used counting processes. It is usually used in scenarios where we are counting the occurrences of certain events that appear to happen at a certain rate, but completely at random (without a certain structure). For example, suppose that from historical data, we know that earthquakes occur in a certain area with a rate of 2 per month. Other than this information, the timings of earthquakes seem to be completely random. Thus, we conclude that the Poisson process might be a good model for earthquakes. In practice, the Poisson process or its extensions have been used to model.
@@ -24,8 +25,33 @@ The Poisson process is one of the most widely-used counting processes. It is usu
 
 
 # Program :
+```python
+import numpy as np
+import math
+
+l=3
+t=2
+
+def p(x):
+    return round(math.exp(-l*t)*((l*t)*x)/math.factorial(x),2)
+
+print("probability that exactly 4 customers arrive",p(4))
+
+n=1-(p(0)+p(1)+p(2)+p(3)+p(4))
+print("probability that more than 4 customers arrive",n)
+
+m=p(0)+p(1)+p(2)+p(3)
+print(" rate of 3 per minute during a time interval of 2 min.",m)
+```
+
 
  
 
-# Results and Output : 
+# Output : 
+![Screenshot 2022-06-01 111414](https://user-images.githubusercontent.com/75234790/171336170-2eec6a6d-7867-4922-9e24-7429fb84e156.png)
+
+
+# Result :
+
+
  
